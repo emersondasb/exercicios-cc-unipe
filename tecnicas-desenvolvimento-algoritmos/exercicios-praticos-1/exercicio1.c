@@ -2,17 +2,6 @@
 // Biblioteca necessária para acentuacao
 #include <locale.h>
 
-char eh_par () {
-    int num;
-    printf("Digite um número a ser verificado se é par ou não: ");
-    scanf("%d", &num);
-    if (num % 2 == 0){
-        printf("É par!\n");
-    } else {
-        printf("É impar!\n");
-    }
-}
-
 int main() {
 
 // Permite acentuacao:
@@ -37,11 +26,6 @@ while (numero != 0) {
     else if (numero < 0 || numero > 9) {
         printf("A opcao digitada é inválida\n");
     }
-
-    else if (numero == 1) {
-        eh_par();
-    }
-    
 
     // Mostra a opcao escolhida: 
     else {

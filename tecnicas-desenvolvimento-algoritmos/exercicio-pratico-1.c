@@ -10,8 +10,8 @@ int calculaMediaPonderada();
 int calculaMediaSimples();
 int exibeDadosAutor();
 int escolha = 0;
-char menu[] = \
-"\n\n===============================\n\
+char menu[] =
+    "\n\n===============================\n\
 MENU:\n\
 1 - Verifica se um número é par;\n\
 2 - Calculadora de potência;\n\
@@ -26,10 +26,10 @@ MENU:\n\
 0 - SAIR.\n\
 ===============================";
 
-int main() 
+int main()
 {
     setlocale(LC_ALL, "Portuguese"); // Define código como escrito em Português
-    
+
     do
     {
         puts(menu);
@@ -38,41 +38,41 @@ int main()
 
         switch (escolha)
         {
-            case 1:
-                verificaSePar();
-                break;
-            
-            case 2:
-                calculaPotencia();
-                break;
-            
-            case 3:
-                calculaRaiz();
-                break;
-            
-            case 4:
-                verificaBissexto();
-                break;
-            
-            case 5:
-                calculaMediaPonderada();
-                break;
-            
-            case 6:
-                calculaMediaSimples();
-                break;
-            
-            case 10:
-                exibeDadosAutor();
-                break;
-            
-            case 0:
-                puts("O programa foi encerrado.");
-                break;
-            
-            default:
-                printf("A opção selecionada é inválida!\n");
-                break;
+        case 1:
+            verificaSePar();
+            break;
+
+        case 2:
+            calculaPotencia();
+            break;
+
+        case 3:
+            calculaRaiz();
+            break;
+
+        case 4:
+            verificaBissexto();
+            break;
+
+        case 5:
+            calculaMediaPonderada();
+            break;
+
+        case 6:
+            calculaMediaSimples();
+            break;
+
+        case 10:
+            exibeDadosAutor();
+            break;
+
+        case 0:
+            puts("O programa foi encerrado.");
+            break;
+
+        default:
+            printf("A opção selecionada é inválida!\n");
+            break;
         }
 
     } while (escolha != 0);
@@ -88,8 +88,8 @@ int verificaSePar()
     if (num % 2 == 0)
     {
         puts("\nÉ par!");
-    } 
-    else 
+    }
+    else
     {
         puts("\nÉ impar!");
     }
@@ -113,9 +113,7 @@ int calculaPotencia()
 
 int calculaRaiz()
 {
-	float radicando;
-    float indice;
-    float raiz;
+    float radicando, indice, raiz;
 
     puts("\nDigite o valor do radicando da raiz a ser calculada: ");
     scanf("%f", &radicando);
@@ -123,85 +121,79 @@ int calculaRaiz()
     puts("\nDigite o valor do índice: ");
     scanf("%f", &indice);
 
-    raiz = pow(radicando, 1/indice);
+    raiz = pow(radicando, 1 / indice);
     printf("\nA raiz é: %e", raiz);
 }
 
 int verificaBissexto()
 {
-	int ano;
-	
+    int ano;
+
     puts("\nDigite o ano a ser verificado se é bissexto: ");
     scanf("%d", &ano);
-    
-    if(ano%4==0)
+
+    if (ano % 4 == 0)
     {
-    	puts("O ano informado é bissexto!");
-	}
-	else
-	{
-		puts("O ano informado NÃO é bissexto!");
-	}
-    
+        puts("O ano informado é bissexto!");
+    }
+    else
+    {
+        puts("O ano informado NÃO é bissexto!");
+    }
 }
 
 int calculaMediaPonderada()
 {
-	float nota1;
-	float nota2;
-	float nota3;
-	float media;
-	float pontos;
-	
-	puts("\nDigite o valor da nota 1: ");
+    float nota1, nota2, nota3, media, pontos;
+
+    puts("\nDigite o valor da nota 1: ");
     scanf("%f", &nota1);
 
-	puts("\nDigite o valor da nota 2: ");
+    puts("\nDigite o valor da nota 2: ");
     scanf("%f", &nota2);
 
-	puts("\nDigite o valor da nota 3: ");
+    puts("\nDigite o valor da nota 3: ");
     scanf("%f", &nota3);
-	
-	media = ((nota1*1 + nota2*1 + nota3*2)/(1+1+2));
-	pontos = nota1*1 + nota2*1 + nota3*2;
-	
-	printf("\nA média do aluno foi %.2f", media);
-	if(pontos>=60)
-	{
-		puts("\nO aluno foi aprovado!");
-	}
-	else
-	{
-		puts("\nO aluno foi reprovado!");
-	}
+
+    media = ((nota1 * 1 + nota2 * 1 + nota3 * 2) / (1 + 1 + 2));
+    pontos = nota1 * 1 + nota2 * 1 + nota3 * 2;
+
+    printf("\nA média do aluno foi %.2f", media);
+    if (pontos >= 60)
+    {
+        puts("\nO aluno foi aprovado!");
+    }
+    else
+    {
+        puts("\nO aluno foi reprovado!");
+    }
 }
 
 int calculaMediaSimples()
 {
-	float nota1;
-	float nota2;
-	
-	puts("\nDigite o valor da nota 1: ");
+    float nota1, nota2;
+
+    puts("\nDigite o valor da nota 1: ");
     scanf("%f", &nota1);
 
-	puts("\nDigite o valor da nota 2: ");
+    puts("\nDigite o valor da nota 2: ");
     scanf("%f", &nota2);
-    
-    if(nota1<0 || nota1>10 || nota2<0 || nota2>10)
+
+    if (nota1 < 0 || nota1 > 10 || nota2 < 0 || nota2 > 10)
     {
-    	puts("\nNota informada inválida!");
-	}
-	else
-	{
-		printf("A média dessas notas é %.2f", (nota1+nota2)/2);
-	}
+        puts("\nNota informada inválida!");
+    }
+    else
+    {
+        printf("A média dessas notas é %.2f", (nota1 + nota2) / 2);
+    }
 }
 
 int exibeDadosAutor()
 {
-	char nome[] = "Emerson Bezerra";
-	int matricula = 1910025017;
-	
-	printf("\nNome do Autor: %s", nome);
-	printf("\nMatrícula: %x", matricula);
+    char nome[] = "Emerson Bezerra";
+    int matricula = 1910025017;
+
+    printf("\nNome do Autor: %s", nome);
+    printf("\nMatrícula: %x", matricula);
 }

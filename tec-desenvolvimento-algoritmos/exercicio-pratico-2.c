@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <locale.h> // Biblioteca necess�ria para localiza��o em Portugu�s
+#include <locale.h> // Biblioteca necessaria para localizacao em Português
 #include <math.h>
 
 int verificaSePar();
@@ -17,27 +17,27 @@ int sequenciaFibonacci();
 char menu[] =
     "\n\n===============================\n\
 MENU:\n\
-1 - Verifica se um n�mero � par;\n\
-2 - Calculadora de pot�ncia;\n\
+1 - Verifica se um número é par;\n\
+2 - Calculadora de potência;\n\
 3 - Calculadora de raiz;\n\
-4 - Verifica se um ano � bissexto;\n\
-5 - Calculadora de m�dia ponderada;\n\
-6 - Calculadora de m�dia simples;\n\
-7 - Fatorial de um n�mero;\n\
-8 - Verifica se um n�mero � primo;\n\
-9 - Exibe uma sequ�ncia de Fibonacci;\n\
-10 - Exibe nome e matr�cula do autor deste programa.\n\
+4 - Verifica se um ano é bissexto;\n\
+5 - Calculadora de média ponderada;\n\
+6 - Calculadora de média simples;\n\
+7 - Fatorial de um número;\n\
+8 - Verifica se um número é primo;\n\
+9 - Exibe uma sequência de Fibonacci;\n\
+10 - Exibe nome e matrícula do autor deste programa.\n\
 0 - SAIR.\n\
 ===============================";
 
 int main()
 {
-    setlocale(LC_ALL, "Portuguese"); // Define c�digo como escrito em Portugu�s
+    setlocale(LC_ALL, "Portuguese"); // Define código como escrito em Português
 
     do
     {
         puts(menu);
-        puts("Escolha uma das op��es acima: ");
+        puts("Escolha uma das opções acima: ");
         scanf("%d", &escolha);
 
         switch (escolha)
@@ -87,7 +87,7 @@ int main()
             break;
 
         default:
-            printf("A op��o selecionada � inv�lida!\n");
+            printf("A opção selecionada é inválida!\n");
             break;
         }
 
@@ -99,15 +99,15 @@ int main()
 int verificaSePar()
 {
     int num;
-    puts("Digite um n�mero a ser verificado se � par ou n�o: ");
+    puts("Digite um número a ser verificado se é par ou não: ");
     scanf("%d", &num);
     if (num % 2 == 0)
     {
-        puts("\n� par!");
+        puts("\nÉ par!");
     }
     else
     {
-        puts("\n� impar!");
+        puts("\nÉ impar!");
     }
 }
 
@@ -117,14 +117,14 @@ int calculaPotencia()
     int expoente;
     float potencia;
 
-    puts("\nDigite o valor da base da pot�ncia a ser calculada: ");
+    puts("\nDigite o valor da base da potência a ser calculada: ");
     scanf("%f", &base);
 
     puts("\nDigite o valor do expoente: ");
     scanf("%d", &expoente);
 
     potencia = pow(base, expoente);
-    printf("\nA pot�ncia �: %e", potencia);
+    printf("\nA potência é: %e", potencia);
 }
 
 int calculaRaiz()
@@ -134,27 +134,27 @@ int calculaRaiz()
     puts("\nDigite o valor do radicando da raiz a ser calculada: ");
     scanf("%f", &radicando);
 
-    puts("\nDigite o valor do �ndice: ");
+    puts("\nDigite o valor do índice: ");
     scanf("%f", &indice);
 
     raiz = pow(radicando, 1 / indice);
-    printf("\nA raiz �: %e", raiz);
+    printf("\nA raiz é: %e", raiz);
 }
 
 int verificaBissexto()
 {
     int ano;
 
-    puts("\nDigite o ano a ser verificado se � bissexto: ");
+    puts("\nDigite o ano a ser verificado se é bissexto: ");
     scanf("%d", &ano);
 
     if (ano % 4 == 0)
     {
-        puts("O ano informado � bissexto!");
+        puts("O ano informado é bissexto!");
     }
     else
     {
-        puts("O ano informado N�O � bissexto!");
+        puts("O ano informado NãO é bissexto!");
     }
 }
 
@@ -174,7 +174,7 @@ int calculaMediaPonderada()
     media = ((nota1 * 1 + nota2 * 1 + nota3 * 2) / (1 + 1 + 2));
     pontos = nota1 * 1 + nota2 * 1 + nota3 * 2;
 
-    printf("\nA m�dia do aluno foi %.2f", media);
+    printf("\nA média do aluno foi %.2f", media);
     if (pontos >= 60)
     {
         puts("\nO aluno foi aprovado!");
@@ -197,11 +197,11 @@ int calculaMediaSimples()
 
     if (nota1 < 0 || nota1 > 10 || nota2 < 0 || nota2 > 10)
     {
-        puts("\nNota informada inv�lida!");
+        puts("\nNota informada inválida!");
     }
     else
     {
-        printf("A m�dia dessas notas � %.2f", (nota1 + nota2) / 2);
+        printf("A média dessas notas é %.2f", (nota1 + nota2) / 2);
     }
 }
 
@@ -211,13 +211,13 @@ int exibeDadosAutor()
     int matricula = 1910025017;
 
     printf("\nNome do Autor: %s", nome);
-    printf("\nMatr�cula: %x", matricula);
+    printf("\nMatrícula: %x", matricula);
 }
 
 int fatorial()
 {
     int numero;
-    puts("\nDigite o n�mero a ser fatorado: ");
+    puts("\nDigite o número a ser fatorado: ");
     scanf("%d", &numero);
 
     for(int i = numero - 1; i > 0; i--)
@@ -231,12 +231,12 @@ int fatorial()
 
 int verificaSePrimo()
 {
-    // N�mero primo: divis�vel por 1 e por ele mesmo APENAS
-    // Possui, portanto, s� dois divisores
+    // Número primo: divisível por 1 e por ele mesmo APENAS
+    // Possui, portanto, só dois divisores
 
     int numero, divisores = 0;
 
-    puts("Digite um n�mero a ser verificado se � primo: ");
+    puts("Digite um número a ser verificado se é primo: ");
     scanf("%d", &numero);
 
     for(int i = 1; i <= numero; i++)
@@ -249,11 +249,11 @@ int verificaSePrimo()
 
     if(divisores > 2)
     {
-        puts("\nO n�mero informado N�O � primo.");
+        puts("\nO número informado NãO é primo.");
     }
     else
     {
-        puts("\nO n�mero informado SIM � primo.");
+        puts("\nO número informado SIM é primo.");
     }
 }
 
@@ -264,7 +264,7 @@ int sequenciaFibonacci()
     int elementos;
     unsigned int sequencia[100] = {1, 1};
 
-    puts("Digite quantos elementos da sequ�ncia voc� quer que sejam exibidos: ");
+    puts("Digite quantos elementos da sequência você quer que sejam exibidos: ");
     scanf("%d", &elementos);
 
     for(int i = 2; i <= elementos; i++)

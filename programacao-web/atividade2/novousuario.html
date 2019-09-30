@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="content-type"/>
+    </head>
+    <body>
+        <form action="projeto2.php" method="POST">
+            Usuário: <input type="text" name="usuario" required/><br/>
+            Senha: <input type="password" id="senha" required/><br/>
+            Redigite a senha: <input type="password" id="senhaRepete" name="senha" onchange="senhaConfirma()" required/><br/>
+            <input type="submit" value="Enviar" onclick="confirmaCadastro()"/>
+        </form>
+
+        <script>
+            function senhaConfirma(){
+                var senhaDigitada = document.getElementById('senha').value;
+                var confirmaSenha = document.getElementById('senhaRepete').value;
+            
+                if (senhaDigitada != confirmaSenha){
+                    alert("As senhas digitadas não coincidem. Digite novamente!");
+            }
+            }
+
+            function confirmaCadastro(){
+                alert("Cadastro efetuado com sucesso!");
+            }
+        </script>
+    </body>
+</html>

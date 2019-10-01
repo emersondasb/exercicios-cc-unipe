@@ -9,7 +9,7 @@
 <html>
 <body>
 <br/>
-<form action="projeto2.php" method="POST">
+<form action="validacadastro.php" method="POST">
     Novo usuário: <input type="text" name="usuario" required/><br/>
     Nova senha: <input type="password" id="senha" required/><br/>
     Redigite a nova senha: <input type="password" id="senhaRepete" name="senha" required/><br/>

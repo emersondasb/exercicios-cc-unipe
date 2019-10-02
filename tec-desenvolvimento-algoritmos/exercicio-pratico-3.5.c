@@ -2,28 +2,28 @@
 
 int main()
 {
-    char texto1[50], texto2[50];
-    int i, letra1, letra2;
+    char texto[100];
+    int i=0, letra;
 
     puts("Informe o texto 1: ");
-    for (i = 0; letra1 != '\n'; i++)
+    for (i = 0; letra != '\n'; i++)
     {
-        letra1 = getc(stdin);
-        texto1[i] = letra1;
+        letra = getc(stdin);
+        texto[i] = letra;
     }
     
-    texto1[i-1] = '\0';
+    letra = 0;
     
     puts("Informe o texto 2: ");
-    for (i = 0; letra2 != '\n'; i++)
+    for (i-=1; letra != '\n'; i++)
     {
-        letra2 = getc(stdin);
-        texto2[i] = letra2;
+        letra = getc(stdin);
+        texto[i] = letra;
     }
     
-    texto2[i-1] = '\0';
-    
-    printf("%s %s", texto1, texto2);
+    texto[i-1] = '\0';
+
+    printf("%s", texto);
 
     return 0;
 }

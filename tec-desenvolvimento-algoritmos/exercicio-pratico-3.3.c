@@ -27,6 +27,7 @@ int main()
     	if(texto1[i] != texto2[i])
     	{
     		diferentes = 1;
+            break;
 		}
 	}
 	

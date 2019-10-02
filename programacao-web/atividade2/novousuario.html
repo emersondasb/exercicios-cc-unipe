@@ -4,11 +4,11 @@
         <meta http-equiv="content-type"/>
     </head>
     <body>
-        <form action="validacadastro.php" method="POST">
+        <form action="validacadastro.php" method="POST" onsubmit="return senhaConfirma()">
             Usuário: <input type="text" name="usuario" required/><br/>
             Senha: <input type="password" id="senha" required/><br/>
-            Redigite a senha: <input type="password" id="senhaRepete" name="senha" onchange="senhaConfirma()" required/><br/>
-            <input type="submit" value="Enviar" onclick="confirmaCadastro()"/>
+            Redigite a senha: <input type="password" id="senhaRepete" name="senha" required/><br/>
+            <input type="submit" value="Enviar"/>
         </form>
 
         <script>
@@ -18,12 +18,12 @@
             
                 if (senhaDigitada != confirmaSenha){
                     alert("As senhas digitadas não coincidem. Digite novamente!");
-            }
+                    return false;
+                } else {
+                    alert("Cadastro efetuado com sucesso!");
+                }
             }
 
-            function confirmaCadastro(){
-                alert("Cadastro efetuado com sucesso!");
-            }
         </script>
     </body>
 </html>

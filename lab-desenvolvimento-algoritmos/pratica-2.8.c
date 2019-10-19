@@ -6,6 +6,8 @@ int main()
 {
     setlocale(LC_ALL, "Portuguese");
 
+    //Não consegui fazer ainda
+
     char texto[100], letra, invertido[100];
     int i, j = 0, retorno;
 

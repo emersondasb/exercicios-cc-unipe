@@ -4,6 +4,9 @@
 int main()
 {
     setlocale(LC_ALL, "Portuguese");
+
+    //Não consegui fazer ainda
+    
     char nome[100][100];
     int i, j;
 

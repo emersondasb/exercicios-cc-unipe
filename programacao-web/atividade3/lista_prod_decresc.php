@@ -14,13 +14,11 @@ $consulta = "SELECT * FROM produto ORDER BY preco DESC";
 
 if ($resultado = $conexao->query($consulta)) {
 
-    /* fetch object array */
     while ($obj = $resultado->fetch_object()) {
-        printf("Preço: %s | Nome: %s | Quantidade: %s \n", $obj->preco, $obj->nome, $obj->quantidade);
+        printf("Preço: R$ %s,00 | Nome: %s | Quantidade: %s", $obj->preco, $obj->nome, $obj->quantidade);
         echo "<br><br>";
     }
 
-    /* free result set */
     $resultado->close();
 }
 

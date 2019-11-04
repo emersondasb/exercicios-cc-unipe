@@ -1,113 +1,14 @@
-#include <stdio.h>
-#include <locale.h> // Biblioteca necessaria para localizacao em Português
-#include <math.h>
+#include "lib.h"
 
-int verificaSePar();
-int calculaPotencia();
-int calculaRaiz();
-int verificaBissexto();
-int calculaMediaPonderada();
-int calculaMediaSimples();
-int exibeDadosAutor();
-int escolha = 0;
-int fatorial();
-int verificaSePrimo();
-int sequenciaFibonacci();
-
-char menu[] =
-    "\n\n===============================\n\
-MENU:\n\
-1 - Verifica se um número é par;\n\
-2 - Calculadora de potência;\n\
-3 - Calculadora de raiz;\n\
-4 - Verifica se um ano é bissexto;\n\
-5 - Calculadora de média ponderada;\n\
-6 - Calculadora de média simples;\n\
-7 - Fatorial de um número;\n\
-8 - Verifica se um número é primo;\n\
-9 - Exibe uma sequência de Fibonacci;\n\
-10 - Exibe nome e matrícula do autor deste programa.\n\
-0 - SAIR.\n\
-===============================";
-
-int main()
+int verificaSePar(int num)
 {
-    setlocale(LC_ALL, "Portuguese"); // Define código como escrito em Português
-
-    do
-    {
-        puts(menu);
-        puts("Escolha uma das opções acima: ");
-        scanf("%d", &escolha);
-
-        switch (escolha)
-        {
-        case 1:
-            verificaSePar();
-            break;
-
-        case 2:
-            calculaPotencia();
-            break;
-
-        case 3:
-            calculaRaiz();
-            break;
-
-        case 4:
-            verificaBissexto();
-            break;
-
-        case 5:
-            calculaMediaPonderada();
-            break;
-
-        case 6:
-            calculaMediaSimples();
-            break;
-
-        case 7:
-            fatorial();
-            break;
-
-        case 8:
-            verificaSePrimo();
-            break;
-
-        case 9:
-            sequenciaFibonacci();
-            break;
-
-        case 10:
-            exibeDadosAutor();
-            break;
-
-        case 0:
-            puts("O programa foi encerrado.");
-            break;
-
-        default:
-            printf("A opção selecionada é inválida!\n");
-            break;
-        }
-
-    } while (escolha != 0);
-
-    return 0;
-}
-
-int verificaSePar()
-{
-    int num;
-    puts("Digite um número a ser verificado se é par ou não: ");
-    scanf("%d", &num);
     if (num % 2 == 0)
     {
-        puts("\nÉ par!");
+        return 1;
     }
     else
     {
-        puts("\nÉ impar!");
+        return 0;
     }
 }
 
@@ -277,4 +178,3 @@ int sequenciaFibonacci()
         printf("%d ", sequencia[i]);
     }
 }
-

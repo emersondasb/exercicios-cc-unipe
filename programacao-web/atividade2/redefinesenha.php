@@ -2,8 +2,15 @@
 
 session_start();
 
-echo "<b>O usuário atual é:</b> " . $_SESSION['usuarioSessao'] . "<br/>";
-echo "<b>A senha atual é:</b> " . $_SESSION['senhaSessao'] . "<br/>";
+if(isset($_SESSION['usuarioSessao']) && isset($_SESSION['senhaSessao']))
+{
+    echo "<b>O usuário atual é:</b> " . $_SESSION['usuarioSessao'] . "<br/>";
+    echo "<b>A senha atual é:</b> " . $_SESSION['senhaSessao'] . "<br/>";
+} else {
+    echo "Não há usuário e senha cadastrados." . "<br/>";
+}
+
+
 ?>
 
 <html>
@@ -14,7 +21,7 @@ echo "<b>A senha atual é:</b> " . $_SESSION['senhaSessao'] . "<br/>";
         Novo usuário: <input type="text" name="usuario" required /><br />
         Nova senha: <input type="password" id="senha" required /><br />
         Redigite a nova senha: <input type="password" id="senhaRepete" name="senha" required /><br />
-        <input type="submit" value="Enviar" onclick="confirmaRedefinicao()" />
+        <input type="submit" value="Enviar" />
     </form>
 
 

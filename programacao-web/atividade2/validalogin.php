@@ -12,8 +12,6 @@ if(isset($_SESSION['usuarioSessao'])){
     echo "Usuário e senha não definidos!";
 }
 
-
-
 ?>
 
 <html>

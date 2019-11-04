@@ -9,41 +9,55 @@ int verificaBissexto();
 int calculaMediaPonderada();
 int calculaMediaSimples();
 int exibeDadosAutor();
-int escolha = 0;
 int fatorial();
 int verificaSePrimo();
 int sequenciaFibonacci();
 
-char menu[] =
-    "\n\n===============================\n\
-MENU:\n\
-1 - Verifica se um número é par;\n\
-2 - Calculadora de potência;\n\
-3 - Calculadora de raiz;\n\
-4 - Verifica se um ano é bissexto;\n\
-5 - Calculadora de média ponderada;\n\
-6 - Calculadora de média simples;\n\
-7 - Fatorial de um número;\n\
-8 - Verifica se um número é primo;\n\
-9 - Exibe uma sequência de Fibonacci;\n\
-10 - Exibe nome e matrícula do autor deste programa.\n\
-0 - SAIR.\n\
-===============================";
+int menu()
+{
+    int escolha;
+    puts("\n\n===============================\n");
+    puts("MENU:\n");
+    puts("1 - Verifica se um número é par;");
+    puts("2 - Calculadora de potência;");
+    puts("3 - Calculadora de raiz;");
+    puts("4 - Verifica se um ano é bissexto;");
+    puts("5 - Calculadora de média ponderada;");
+    puts("6 - Calculadora de média simples;");
+    puts("7 - Fatorial de um número;");
+    puts("8 - Verifica se um número é primo;");
+    puts("9 - Exibe uma sequência de Fibonacci;");
+    puts("10 - Exibe nome e matrícula do autor deste programa.");
+    puts("0 - SAIR.\n");
+    puts("===============================\n");
+    puts("Escolha uma das opções acima: ");
+    scanf("%d", &escolha);
+    return escolha;
+}
 
 int main()
 {
     setlocale(LC_ALL, "Portuguese"); // Define código como escrito em Português
-
+    
+    int escolha, num;
+    
     do
     {
-        puts(menu);
-        puts("Escolha uma das opções acima: ");
-        scanf("%d", &escolha);
-
+        escolha = menu();
         switch (escolha)
         {
         case 1:
-            verificaSePar();
+            puts("Digite um número a ser verificado se é par ou não: ");
+            scanf("%d", &num);
+            if(verificaSePar(num))
+            {
+                puts("\nO valor digitado é PAR!");
+            }
+            else
+            {
+                puts("\nO valor digitado é IMPAR!");
+            }
+            
             break;
 
         case 2:
@@ -96,18 +110,15 @@ int main()
     return 0;
 }
 
-int verificaSePar()
+int verificaSePar(int num)
 {
-    int num;
-    puts("Digite um número a ser verificado se é par ou não: ");
-    scanf("%d", &num);
     if (num % 2 == 0)
     {
-        puts("\nÉ par!");
+        return 1;
     }
     else
     {
-        puts("\nÉ impar!");
+        return 0;
     }
 }
 

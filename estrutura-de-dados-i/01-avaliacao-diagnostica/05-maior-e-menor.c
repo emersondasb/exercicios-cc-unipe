@@ -2,32 +2,26 @@
 Percorrer este vetor, apresentando cada valor, e encontrar e apresentar o maior e o menor valor informado pelo usuário. */
 
 #include <stdio.h>
-#include <locale.h>
 
 int main() {
-    setlocale(LC_ALL, "");
 
-    int valores[5], contador = 0, maior, menor;
+    int valores[5], i = 0, maior, menor;
     
     printf("Digite um valor: ");
-    scanf("%d", &valores[contador]);
-    maior = valores[contador];
-    menor = valores[contador];
-    contador++;
+    scanf("%d", &valores[i]);
+    maior = menor = valores[i];
 
-    while(contador < 5) {
+    for(i=1; i < 5; i++) {
         printf("Digite um valor: ");
-        scanf("%d", &valores[contador]);
-        if(valores[contador] > maior) {
-            maior = valores[contador];
+        scanf("%d", &valores[i]);
+        if(valores[i] > maior) {
+            maior = valores[i];
         }
-        if(valores[contador] < menor) {
-            menor = valores[contador];
+        else if(valores[i] < menor) {
+            menor = valores[i];
         }
-        contador++;
     }
 
-    printf("O maior número digitado foi: %d\n", maior);
-    printf("O menor número digitado foi: %d\n", menor);
-    
+    printf("O maior numero digitado foi: %d\n", maior);
+    printf("O menor numero digitado foi: %d\n", menor);
 }

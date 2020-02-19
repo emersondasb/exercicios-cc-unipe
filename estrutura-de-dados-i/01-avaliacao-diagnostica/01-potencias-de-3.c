@@ -16,3 +16,4 @@ int main() {
         printf("\n%d^%d = %.0f", base, expoente, pow(base, expoente));
     }
 }
+

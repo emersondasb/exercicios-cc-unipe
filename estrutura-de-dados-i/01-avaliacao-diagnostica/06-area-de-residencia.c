@@ -11,43 +11,48 @@ float calcula_area();
 
 typedef struct area
 {
-    char comodo[500];
+    char comodo[50];
     float largura;
     float comprimento;
-} residencia;
+} casa;
 
 int main() 
 {
-    residencia residencia[100];
+    casa residencia[10];
     int novo_comodo = 1;
-    int contador = 0;
+    int contador = 0, letra;
     float area_total;
     
-    while(novo_comodo == 1) 
+
+    for(contador; novo_comodo == 1; contador++)
     {
-        for(contador; novo_comodo != 0; contador++)
-        {
-            puts("Digite o nome do comodo: ");
-            fgets(residencia[contador].comodo, 50, stdin);
+        puts("Digite o nome do comodo: ");
+            int i;
+            for(i = 0; letra != '\n'; i++) 
+            {
+                letra = getchar();
+                residencia[contador].comodo[i] = letra;
+            }
 
-            residencia[contador].comodo[strlen(residencia[0].comodo) - 1] = '\0'; //remove o ENTER '\n' ao final da entrada da string
+        residencia[contador].comodo[i-1] = '\0'; //remove o ENTER '\n' ao final da entrada da string
+        
+        puts("Digite a largura do comodo: ");
+        scanf("%f", &residencia[contador].largura);
 
-            puts("Digite a largura do comodo: ");
-            scanf("%f", &residencia[contador].largura);
+        puts("Digite o comprimento do comodo: ");
+        scanf("%f", &residencia[contador].comprimento);
+        
+        puts("Gostaria de acrescentar um novo comodo? Para SIM, tecle '1' para NAO tecle '0'.");
+        scanf("%d", &novo_comodo);
+        
 
-            puts("Digite o comprimento do comodo: ");
-            scanf("%f", &residencia[contador].comprimento);
-
-            puts("Gostaria de acrescentar um novo comodo? Para SIM, tecle '1' para NAO tecle '0'.");
-            scanf("%d", &novo_comodo);
-
-            fflush(stdin);
-        }
     }
 
-    printf("\n\nNome do comodo: %s.", residencia[0].comodo);
-    printf("\nNome largura do comodo: %f.", residencia[0].largura);
-    printf("\nNome comprimento do comodo: %f.", residencia[0].comprimento);
+
+    printf("\nNome do comodo: %s.", residencia[0].comodo);
+    printf("\nNome do comodo: %s.", residencia[1].comodo);
+    //printf("\nNome largura do comodo: %f.", residencia[0].largura);
+    //printf("\nNome comprimento do comodo: %f.", residencia[0].comprimento);
 
 }
 

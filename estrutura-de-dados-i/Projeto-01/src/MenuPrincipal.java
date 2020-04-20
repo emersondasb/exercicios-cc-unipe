@@ -15,6 +15,8 @@ public class MenuPrincipal {
 		
 		Scanner entrada = new Scanner(System.in);
 		
+		System.out.println("Projeto desenvolvido por Emerson Bezerra (Aluno da UNIPÊ - RGM: 10749217).");
+		System.out.println("Atividade avaliativa do prof. Wallace Bonfim - Disciplina de Estrutura de Dados I - 2020.1.\n");
 		
 		while (opcaoMenuPrincipal != 0) {
 			System.out.println("======================\n"

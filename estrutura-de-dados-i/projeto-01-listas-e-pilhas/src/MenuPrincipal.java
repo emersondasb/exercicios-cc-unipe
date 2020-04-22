@@ -69,7 +69,7 @@ public class MenuPrincipal {
 							}
 							
 							if(resposta) {
-								System.out.println("Contato inserido com sucesso!\n");
+								System.out.println("Nome inserido com sucesso!\n");
 							} else {
 								System.out.println("Posição inválida, escolha outra.\n");
 							}
@@ -185,8 +185,9 @@ public class MenuPrincipal {
 				break;
 			case 4:
 				int opcaoPilhaEncadeada = -1;
-				PessoaPilhaEncadeada novaPessoaPilha = new PessoaPilhaEncadeada();
+				
 				while(opcaoPilhaEncadeada != 4) {
+					
 					System.out.println("======================\n"
 							+ "|  PILHA ENCADEADA   |\n"
 							+ "======================");
@@ -200,6 +201,7 @@ public class MenuPrincipal {
 					switch (opcaoPilhaEncadeada) {
 
 						case 1: 
+							PessoaPilhaEncadeada novaPessoaPilha = new PessoaPilhaEncadeada();
 							System.out.println("Que nome gostaria de inserir na pilha encadeada?");
 							novaPessoaPilha.setNome(entrada.next());
 							pilhaencadeada.push(novaPessoaPilha);
